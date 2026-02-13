@@ -13,12 +13,10 @@ CREDIT = environ.get("CREDIT", "")
 TOTAL_USERS = []
 
 for user_id in TOTAL_USER:
-    try:
-        uid = str(user_id).strip()
-        if uid.isdigit():
-            TOTAL_USERS.append(int(uid))
-    except:
-        pass
+    uid = str(user_id).strip()
+    if uid.isdigit():
+        TOTAL_USERS.append(int(uid))
+
 
 
 AUTH_USER = os.environ.get('AUTH_USERS', '').split(',')
@@ -28,5 +26,6 @@ if int(OWNER) not in AUTH_USERS:
   
 #WEBHOOK = True  # Don't change this
 #PORT = int(os.environ.get("PORT", 8080))  # Default to 8000 if not set
+
 
 
